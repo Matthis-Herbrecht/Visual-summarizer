@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Summarizer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 Visual Summarizer</h1>
+      <p class="subtitle">Transform articles into memorable summaries</p>
+    </header>
+
+    <section class="api-section">
+      <label for="api-key">Claude API Key</label>
+      <div class="input-group">
+        <input
+          type="password"
+          id="api-key"
+          placeholder="sk-ant-api03-..."
+          autocomplete="off"
+        >
+        <button id="toggle-visibility" class="icon-btn" title="Show/Hide">
+          👁️
+        </button>
+      </div>
+      <button id="save-key" class="btn primary">Save API Key</button>
+      <p id="status-message" class="status"></p>
+    </section>
+
+    <section class="actions-section">
+      <button id="open-summarizer" class="btn action">
+        ✨ Open Summarizer
+      </button>
+      <p class="shortcut-hint">Or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd></p>
+    </section>
+
+    <section class="mode-section">
+      <h3>Default Mode</h3>
+      <div class="mode-toggle">
+        <label class="mode-option">
+          <input type="radio" name="mode" value="takeaways" checked>
+          <span class="mode-label">📝 Takeaways</span>
+        </label>
+        <label class="mode-option">
+          <input type="radio" name="mode" value="visual">
+          <span class="mode-label">🗺️ Visual</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="mode-section">
+      <h3>Language</h3>
+      <div class="mode-toggle">
+        <label class="mode-option">
+          <input type="radio" name="lang" value="en" checked>
+          <span class="mode-label">🇬🇧 English</span>
+        </label>
+        <label class="mode-option">
+          <input type="radio" name="lang" value="fr">
+          <span class="mode-label">🇫🇷 Français</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="saved-section" id="saved-section">
+      <h3>⭐ Saved Points</h3>
+      <div class="saved-list" id="saved-list">
+        <p class="empty-saved">No saved points yet</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Powered by Claude AI</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
